@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="LaPetite Staff">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#073f35">
+  <title>LaPetite Staff · Employee Records</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="icon" href="assets/logo.svg">
+</head>
+<body>
+  <div class="login-wrap" id="login">
+    <div class="login-card">
+      <div class="login-brand">
+        <img src="assets/logo.svg" alt="LaPetite Chemists">
+        <div>
+          <h1>LaPetite Chemists Ltd</h1>
+          <p>Ahodwo, Kumasi · Human Resources</p>
+        </div>
+      </div>
+      <h2>Staff records access</h2>
+      <p class="hint">Enter the branch access code to open the digital employee register.</p>
+      <form id="login-form">
+        <div class="field">
+          <label for="pin">Access code</label>
+          <input id="pin" name="pin" type="password" autocomplete="current-password" required>
+        </div>
+        <p id="login-error" style="color:#9b2c2c;font-size:.88rem;min-height:1.2em;margin:0 0 8px"></p>
+        <button class="btn btn-primary" type="submit">Open register</button>
+      </form>
+      <div class="demo-note">Demonstration access code: <strong>Ahodwo2026</strong>. Change this before live use. Records stay on this device unless you export them.</div>
+    </div>
+  </div>
+  <div class="app" id="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="">
+        <div>
+          <h1>LaPetite Staff</h1>
+          <small>Ahodwo · Kumasi</small>
+        </div>
+      </div>
+      <nav class="nav">
+        <button data-view="dashboard" class="active" onclick="setView('dashboard')">Overview</button>
+        <button data-view="directory" onclick="setView('directory')">Directory</button>
+        <button data-view="form" onclick="setView('form')">Add employee</button>
+        <button data-view="settings" onclick="setView('settings')">Settings</button>
+        <button onclick="logout()">Sign out</button>
+      </nav>
+      <div class="sidebar-foot">
+        Confidential employee information.<br>
+        Plot 8 Block J, Ahodwo.
+      </div>
+    </aside>
+    <main class="main">
+      <div id="content"></div>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
